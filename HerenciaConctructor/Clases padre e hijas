@@ -1,0 +1,63 @@
+from abc import ABC
+
+class alumnos(ABC):
+    _numeroHombres = int(0)
+    _numeroMujeres = int(0)
+    _totalAlumnos = int(0)
+
+    def __init__(self, numeroHombres, numeroMujeres, totalAlumnos):
+        self._numeroHombres = numeroHombres
+        self._numeroMujeres = numeroMujeres
+        self._totalAlumnos = totalAlumnos
+
+    def calcularTotalAlumnos(self):
+        self._totalAlumnos = self._numeroHombres + self._numeroMujeres
+
+    def getTotalAlumnos(self):
+        return self._totalAlumnos
+
+
+class hombres(alumnos):
+    _porcentajeHombres = float(0.0)
+
+    def __init__(self, numeroHombres, numeroMujeres, totalAlumnos, porcentajeHombres):
+        alumnos.__init__(self, numeroHombres,numeroMujeres,totalAlumnos)
+        self._totalAlumnos = totalAlumnos
+        self._numeroHombres = numeroHombres
+        self._porcentajeHombres = porcentajeHombres
+        self.calcularPorcentajeHombres()
+
+    def calcularTotalAlumnos(self):
+        pass
+
+    def getTotalAlumnos(self):
+        pass
+
+    def calcularPorcentajeHombres(self):
+        self._porcentajeHombres = self._numeroHombres * 100 / self._totalAlumnos
+
+    def getPorcentajeHombres(self):
+        return self._porcentajeHombres
+
+
+class mujeres(alumnos):
+    _porcentajeMujeres = float(0.0)
+
+    def __init__(self, numeroHombres, numeroMujeres, totalAlumnos, porcentajeMujeres):
+        alumnos.__init__(self, numeroHombres, numeroMujeres, totalAlumnos)
+        self._totalAlumnos = totalAlumnos
+        self._numeroMujeres = numeroMujeres
+        self._porcentajeMujeres = porcentajeMujeres
+        self.calcularPorcentajeMujeres()
+
+    def calcularTotalAlumnos(self):
+        pass
+
+    def getTotalAlumnos(self):
+        pass
+
+    def calcularPorcentajeMujeres(self):
+        self._porcentajeMujeres = self._numeroMujeres * 100 / self._totalAlumnos
+
+    def getPorcentajeMujeres(self):
+        return self._porcentajeMujeres
