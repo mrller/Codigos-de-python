@@ -1,0 +1,11 @@
+from clase import*
+
+if __name__ == "__main__":
+
+    print("hombres")
+    resultado = hombres(30, 50, 80, 37)
+    print(resultado.getPorcentajeHombres())
+
+    print("mujeres")
+    resultado = mujeres(30,50,80,62)
+    print(resultado.getPorcentajeMujeres())
